@@ -1,0 +1,6 @@
+<mat-toolbar color="primary" class="toolbar"  >
+  <button type="button" aria-label="Toggle sidenav"mat-icon-button (click)="drawer.toggle()"*ngIf="isHandset$ | async">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h1 class="app-name">Responsive App</h1>
+</mat-toolbar>

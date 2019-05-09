@@ -5,7 +5,6 @@
     </button>
     <h1 class="app-name">Responsive App</h1>
   </mat-toolbar>
-    
   <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="(isHandset$ | async) ? 56 : 0">
     <mat-sidenav #drawer [fixedInViewport]="(isHandset$ | async)"
         [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
@@ -19,11 +18,13 @@
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <router-outlet></router-outlet>
-      todo
-      quebrar mattoobar para header <br>
-      quebrar sidenav para menu<br>
-      incluir footer
+      <main>
+        <router-outlet></router-outlet>
+        todo
+        quebrar mattoobar para header <br>
+        quebrar sidenav para menu<br>
+        incluir footer
+      </main>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
