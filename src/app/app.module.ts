@@ -8,11 +8,13 @@ import { MaterialModule } from './material/material.module';
 import { LoginComponent } from './security/login/login.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { NavigationModule } from './navigation/navigation.module';
+import { UsersComponent } from './user/users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
