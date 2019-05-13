@@ -9,10 +9,14 @@ import { NavigationModule } from './navigation/navigation.module';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
+import { ExampleComponent } from './example/example.component';
+import { MatInputModule, MatButtonModule, MatSelectModule, MatRadioModule, MatCardModule } from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExampleComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,13 @@ import { SharedModule } from './shared/shared.module';
     NavigationModule.forRoot(),
     OAuthModule.forRoot(),
     HttpClientModule,
-    SharedModule.forRoot()
+    SharedModule.forRoot(),
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCardModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
