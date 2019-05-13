@@ -5,22 +5,29 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { TISS_API } from 'src/app/app.api';
 import { tap } from 'rxjs/operators';
+import { OAuthService } from 'angular-oauth2-oidc';
 
 @Injectable()
 export class LoginService {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private oauthService: OAuthService) { }
 
   user: User;
 
   lastUrl: string;
 
-  isLoggendIn(): boolean {
-    return false;
+  public login() {
+    this.oauthService.initImplicitFlow();
   }
 
-  login(email: string, password: string) : Observable<User> {
-    return this.http.post<User>(`${TISS_API}/login`, {email: email, password: password}).pipe(tap(user => this.user = user));
+  public logout() {
+    this.oauthService.logOut();
+  }
+
+  public get name() {
+    let claims = this.oauthService.getIdentityClaims();
+    if (!claims) return null;
+    return claims;
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { OAuthService, JwksValidationHandler } from 'angular-oauth2-oidc';
+import { authConfig } from './app.api';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'tiss-angular';
+
+  constructor(private oauthService: OAuthService) {
+    this.configureWithNewConfigApi();
+  }
+
+  private configureWithNewConfigApi() {
+    this.oauthService.configure(authConfig);
+    this.oauthService.tokenValidationHandler = new JwksValidationHandler();
+    this.oauthService.tryLogin();
+
+    console.log(this.oauthService.redirectUri);
+    console.log('aqui url >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'+ this.oauthService.loginUrl);
+  }
+
 }
