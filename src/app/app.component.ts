@@ -20,8 +20,6 @@ export class AppComponent {
     this.oauthService.tokenValidationHandler = new JwksValidationHandler();
     this.oauthService.tryLogin();
 
-    console.log(this.oauthService.redirectUri);
-    console.log('aqui url >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'+ this.oauthService.loginUrl);
   }
 
 }
