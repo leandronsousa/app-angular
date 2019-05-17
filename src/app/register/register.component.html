@@ -1,14 +1,72 @@
 <div class="div-register">
-  <mat-card class="card">
-    <mat-card-header>
-      <mat-card-title>Register</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-    
-    </mat-card-content>
-    <mat-card-actions align="end">
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>Register</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" class="full-width" color="primary">
+              <mat-label>Name</mat-label>
+              <input type="text" matInput placeholder="Name" formControlName="name">
+              <mat-error *ngIf="registerForm.controls['name'].hasError('required')">
+                  Name required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" class="full-width" color="primary">
+              <mat-label>E-mail</mat-label>
+              <input type="text" matInput placeholder="E-mail" formControlName="email">
+              <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+                  E-mail required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" class="full-width" color="primary">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput placeholder="Password" formControlName="password">
+              <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
+                  Password required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" class="full-width" color="primary">
+              <mat-label>Confirm Password</mat-label>
+              <input type="password" matInput placeholder="Confirm Password" formControlName="confirmPassword">
+              <mat-error *ngIf="registerForm.controls['confirmPassword'].hasError('required')">
+                  Confirm password required!
+              </mat-error>
+              <mat-error *ngIf="registerForm.hasError('passwordNotMatch')">
+                  Passwords not match!
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+        <button mat-button color="primary" type="submit" [disabled]="!registerForm.valid">Submit</button>
+        <button routerLink="/login" mat-button color="warn">Cancel</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </form>
+
 </div>

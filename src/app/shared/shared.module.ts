@@ -5,17 +5,19 @@ import { LoginComponent } from '../security/login/login.component';
 import { MaterialModule } from '../material/material.module';
 import { RegisterComponent } from '../register/register.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { CommonModule } from '@angular/common';
+import { UserService } from '../user/user.service';
 
 @NgModule({
     declarations: [LoginComponent, RegisterComponent],
-    imports: [FormsModule, ReactiveFormsModule, MaterialModule, AppRoutingModule],
-    exports: [FormsModule, ReactiveFormsModule, MaterialModule]
+    imports: [FormsModule, ReactiveFormsModule, MaterialModule, AppRoutingModule, CommonModule],
+    exports: [FormsModule, ReactiveFormsModule, MaterialModule, CommonModule]
 })
 export class SharedModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: SharedModule,
-            providers: [LoginService]
+            providers: [LoginService, UserService]
         }
     }
 }

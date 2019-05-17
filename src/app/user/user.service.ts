@@ -3,6 +3,7 @@ import { User } from './user.model';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { TISS_API } from '../app.api';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class UserService {
@@ -12,6 +13,10 @@ export class UserService {
     list(): Observable<User[]> {
         let params: HttpParams = undefined;
         return this.http.get<User[]>(`${TISS_API}/user/list`, {params: params});
+    }
+
+    save(user: User): Observable<User> {
+        return this.http.post<User>(`${TISS_API}/user/save`, user).pipe(tap(user => user));
     }
 
 }
