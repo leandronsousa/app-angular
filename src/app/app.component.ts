@@ -17,6 +17,7 @@ export class AppComponent {
 
   private configureWithNewConfigApi() {
     this.oauthService.configure(authConfig);
+    this.oauthService.setStorage(sessionStorage);
     this.oauthService.tokenValidationHandler = new JwksValidationHandler();
     this.oauthService.tryLogin();
 
