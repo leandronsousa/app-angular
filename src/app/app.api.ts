@@ -4,7 +4,10 @@ import { AuthConfig } from 'angular-oauth2-oidc';
 export const TISS_API = environment.api;
 
 export const authConfig: AuthConfig = {
-  loginUrl: `${TISS_API}/oauth/token`,
+  //loginUrl: `${TISS_API}/oauth/token`,
+
+  tokenEndpoint: `${TISS_API}/oauth/token`,
+
     // Url of the Identity Provider
   issuer: `${TISS_API}/index.html`,
 
@@ -12,7 +15,9 @@ export const authConfig: AuthConfig = {
   redirectUri: `${TISS_API}`,
 
   // The SPA's id. The SPA is registerd with this id at the auth-server
-  clientId: 'app-tiss',
+  clientId: 'app-tiss-pass',
+
+  dummyClientSecret: 'apptiss123456',
 
   // set the scope for the permissions the client should request
   // The first three are defined by OIDC. The 4th is a usecase-specific one

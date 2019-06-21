@@ -8,8 +8,4 @@ export class User {
 
     password: string;
 
-    token: string;
-
-    constructor(email: string, password: string) {}
-
 }

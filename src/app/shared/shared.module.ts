@@ -7,6 +7,7 @@ import { RegisterComponent } from '../register/register.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../user/user.service';
+import { AppService } from '../app.service';
 
 @NgModule({
     declarations: [LoginComponent, RegisterComponent],
@@ -17,7 +18,7 @@ export class SharedModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: SharedModule,
-            providers: [LoginService, UserService]
+            providers: [LoginService, UserService, AppService]
         }
     }
 }

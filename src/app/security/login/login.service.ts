@@ -23,7 +23,7 @@ export class LoginService {
 
     // this.oauthService.tokenEndpoint = 'http://localhost:8080/oauth/token';
 
-    // this.oauthService.userinfoEndpoint = 'http://localhost:8080/user/list';
+    //this.oauthService.userinfoEndpoint = 'http://localhost:8080/user/list';
 
     // this.oauthService.clientId = 'app-tiss-pass';
 
@@ -31,27 +31,21 @@ export class LoginService {
 
     // this.oauthService.dummyClientSecret = 'apptiss123456';
 
-    // this.oauthService.fetchTokenUsingPasswordFlow('leandro@gmail.com', '123456').then((resp) => {
+    this.oauthService.fetchTokenUsingPasswordFlow('leandro@gmail.com', '123456').then((resp) => {
+      console.log(resp);
+      // Loading data about the user
+      // console.log(this.oauthService.loadUserProfile());
 
-    //   // Loading data about the user
-    //   console.log(this.oauthService.loadUserProfile());
+    }).then(() => {
+      console.log(this.oauthService.getAccessToken());
+      console.log(this.oauthService.getRefreshToken());
 
-    // }).then(() => {
+      // Using the loaded user data
+      let claims = this.oauthService.getIdentityClaims();
+      if (claims) console.log('given_name', claims);
 
+    })
 
-    //   // Using the loaded user data
-    //   let claims = this.oauthService.getIdentityClaims();
-    //   if (claims) console.log('given_name', claims);
-
-    // })
-
-
-    this.oauthService.configure(authConfig);
-    this.oauthService.loadDiscoveryDocument();
-    this.oauthService.customQueryParams = {
-      'grant_type': 'implicit'
-    }
-    this.oauthService.initImplicitFlow();
   }
 
   public logout() {
@@ -62,6 +56,10 @@ export class LoginService {
     let claims = this.oauthService.getIdentityClaims();
     if (!claims) return null;
     return claims;
+  }
+
+  public getToken(): string {
+    return this.oauthService.getAccessToken();
   }
 
 }

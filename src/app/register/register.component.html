@@ -1,6 +1,6 @@
 <div class="div-register">
 
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+  <form [formGroup]="registerForm" novalidate>
 
     <mat-card class="card">
       <mat-card-header>
@@ -62,7 +62,7 @@
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button mat-button color="primary" type="submit" [disabled]="!registerForm.valid">Submit</button>
+        <button mat-button color="primary" (click)="onSubmit(registerForm.value)" >Submit</button>
         <button routerLink="/login" mat-button color="warn">Cancel</button>
       </mat-card-actions>
     </mat-card>

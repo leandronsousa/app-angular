@@ -13,7 +13,6 @@ export class RegisterComponent implements OnInit {
 
   emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-
   registerForm = this.formBuilder.group({
     name: [null, Validators.compose([Validators.required, Validators.minLength(5)])],
     email: [null, Validators.compose([Validators.required, Validators.pattern(this.emailPattern)])],
@@ -40,6 +39,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(user: User) {
+    console.log('entrou');
     this.userService.save(user);
   }
 
