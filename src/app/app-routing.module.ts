@@ -9,7 +9,8 @@ const routes: Routes = [
   {path: '', component: NavigationComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'example', component: ExampleComponent}
+  {path: 'example', component: ExampleComponent},
+  {path: 'users', loadChildren: './user/user.module#UserModule'}
 ];
 
 @NgModule({

@@ -39,7 +39,6 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(user: User) {
-    console.log('entrou');
     this.userService.save(user);
   }
 
