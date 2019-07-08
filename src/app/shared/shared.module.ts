@@ -4,14 +4,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from '../security/login/login.component';
 import { MaterialModule } from '../material/material.module';
 import { RegisterComponent } from '../register/register.component';
-import { AppRoutingModule } from '../app-routing.module';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../user/user.service';
 import { AppService } from '../app.service';
+import { ExampleComponent } from '../example/example.component';
 
 @NgModule({
-    declarations: [LoginComponent, RegisterComponent],
-    imports: [FormsModule, ReactiveFormsModule, MaterialModule, AppRoutingModule, CommonModule],
+    declarations: [LoginComponent, RegisterComponent, ExampleComponent],
+    imports: [FormsModule, ReactiveFormsModule, MaterialModule, CommonModule],
     exports: [FormsModule, ReactiveFormsModule, MaterialModule, CommonModule]
 })
 export class SharedModule {

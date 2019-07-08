@@ -1,11 +1,11 @@
 <div class="div-login">
   <mat-card class="card">
     <form [formGroup]="formLogin" novalidate onsubmit="">
-      
+
       <mat-card-header>
-        <mat-card-title>Login</mat-card-title>   
+        <mat-card-title>Login</mat-card-title>
       </mat-card-header>
-      
+
       <mat-card-content>
         <div class="row">
           <div class="col">
@@ -20,16 +20,16 @@
               <mat-form-field appearance="outline" class="full-width" color="primary">
                 <mat-label>Password</mat-label>
                 <input type="password" matInput placeholder="Password" formControlName="password">
-              </mat-form-field>  
+              </mat-form-field>
           </div>
         </div>
       </mat-card-content>
-      
+
       <mat-card-actions align="end">
         <button routerLink="/register" routerLinkActive="active" type="button" mat-button> Register </button>
         <button (click)="login()" [disabled]="!formLogin.valid" mat-button>Login</button>
       </mat-card-actions>
-      
+
       </form>
   </mat-card>
 </div>

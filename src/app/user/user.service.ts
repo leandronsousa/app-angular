@@ -14,8 +14,8 @@ export class UserService {
     list(): Observable<User[]> {
         const opt =  {
             headers: new HttpHeaders ({
-                'Content-type': 'application/json', 
-                'Authorization': 'Bearer '+this.loginService.getToken()    
+                'Content-type': 'application/json',
+                'Authorization': 'Bearer ' + this.loginService.getToken()
             })
         }
         return this.http.get<User[]>(`${TISS_API}/user/list`, opt);
@@ -25,8 +25,8 @@ export class UserService {
         let params = new HttpParams();
         const opt =  {
             headers: new HttpHeaders ({
-                'Content-type': 'application/json', 
-                'Authorization': 'Bearer '+this.loginService.getToken()    
+                'Content-type': 'application/json',
+                'Authorization': 'Bearer ' + this.loginService.getToken()
             })
         }
 
