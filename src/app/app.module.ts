@@ -9,6 +9,7 @@ import { OAuthModule } from 'angular-oauth2-oidc';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [

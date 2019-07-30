@@ -6,13 +6,12 @@ import { UserFormComponent } from './user-form/user-form.component';
 
 const routes: Routes = [
     {path: '', component: UserListComponent},
-    {path: 'users', component: UserListComponent},
-    {path: 'user/:id', component: UserFormComponent},
+    {path: 'users/:{id}', component: UserFormComponent},
 ];
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],
-    exports: []
+    exports: [RouterModule]
 })
 export class UserRoutingModule { }
 
