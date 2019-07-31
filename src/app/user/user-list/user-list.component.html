@@ -24,11 +24,10 @@
                   <mat-icon>more_vert</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu">
-                  <a mat-menu-item href="#" [routerLink]="['/users', btt(user.id)]" routerLinkActive="active">df </a>
-                  <button mat-menu-item [routerLink]="['/users', user.id]" routerLinkActive="active" type="button">
+                  <a mat-menu-item href="#" [routerLink]="['/users', btt(user.id)]" routerLinkActive="active">
                     <mat-icon>edit</mat-icon>
                     <span>Editar</span>
-                  </button>
+                  </a>
                 </mat-menu>
               </td>
             </ng-container>

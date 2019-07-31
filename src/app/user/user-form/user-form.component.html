@@ -1,3 +1,39 @@
-<p>
-  user-form works!
-</p>
+<div class="user-form">
+  <form id="userForm" #userForm="ngForm"  novalidate>
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>Cadastro de Usuário</mat-card-title>
+        <mat-card-subtitle>Edição de Usuário</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" class="third-width" color="primary">
+              <mat-label>Name</mat-label>
+              <input type="text" #name matInput placeholder="Name" [(ngModel)]="user.name" name="name" minlength="5" maxlength="100" required="true">
+                  <mat-error *ngIf="!name.valid">
+                  Name required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" class="third-width" color="primary">
+              <mat-label>E-mail</mat-label>
+              <input type="text" #email matInput placeholder="E-mail" [(ngModel)]="user.email" name="email" [email]="true" maxlength="100">
+              <mat-error *ngIf="!email.valid">
+                  E-mail required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button color="primary" (click)="onSubmit()" >Submit</button>
+        <button routerLink="/users" mat-button color="warn">Cancel</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

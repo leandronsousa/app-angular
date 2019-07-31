@@ -18,13 +18,7 @@ export class RegisterComponent implements OnInit {
     email: [null, Validators.compose([Validators.required, Validators.pattern(this.emailPattern)])],
     password: [null, Validators.compose([Validators.required, Validators.minLength(6)])],
     confirmPassword: [null, Validators.compose([Validators.required, Validators.minLength(6)])]
-  },{validators: [RegisterComponent.equalsTo], updateOn: 'blur'});
-
-  constructor(private formBuilder: FormBuilder,
-              private userService: UserService) { }
-
-  ngOnInit() {
-  }
+  }, {validators: [RegisterComponent.equalsTo], updateOn: 'blur'});
 
   static equalsTo(group: AbstractControl): {[key: string]: boolean} {
     const pass = group.get('password');
@@ -33,9 +27,15 @@ export class RegisterComponent implements OnInit {
       return undefined;
     }
     if (pass.value !== conf.value) {
-      return {passwordNotMatch:true};
+      return {passwordNotMatch: true};
     }
     return undefined;
+  }
+
+  constructor(private formBuilder: FormBuilder,
+              private userService: UserService) { }
+
+  ngOnInit() {
   }
 
   onSubmit(user: User) {
