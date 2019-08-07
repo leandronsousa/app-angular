@@ -1,55 +1,26 @@
 import { Injectable } from '@angular/core';
 import { User } from './user.model';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { TISS_API } from '../app.api';
-import { LoginService } from '../security/login/login.service';
+import { GenericService } from '../core/generic.service';
 
 @Injectable()
-export class UserService {
-
-    constructor(private http: HttpClient, private loginService: LoginService) {}
+export class UserService extends GenericService<User> {
 
     list(): Observable<User[]> {
-        const opt =  {
-            headers: new HttpHeaders ({
-                'Content-type': 'application/json',
-                'Authorization': 'Bearer ' + this.loginService.getToken()
-            })
-        };
-        return this.http.get<User[]>(`${TISS_API}/user/list`, opt);
+        return super.doGet('/user/list');
     }
 
     save(user: User): Observable<User> {
-        const opt =  {
-            headers: new HttpHeaders ({
-                'Content-type': 'application/json',
-                'Authorization': 'Bearer ' + this.loginService.getToken()
-            })
-        };
-        this.http.post(`${TISS_API}/user/save`, user, opt).subscribe(response => console.log(response), err => console.log(err));
-
+        super.doPost('/user/save', user);
         return null;
     }
 
     findById(id: string): Observable<User> {
-      const opt =  {
-          headers: new HttpHeaders ({
-              'Content-type': 'application/json',
-              'Authorization': 'Bearer ' + this.loginService.getToken()
-          })
-      };
-      return this.http.get<User>(`${TISS_API}/user/${id}`, opt);
+      return super.doGet(`/user/${id}`);
     }
 
     update(user: User): Observable<User> {
-      const opt =  {
-        headers: new HttpHeaders ({
-            'Content-type': 'application/json',
-            'Authorization': 'Bearer ' + this.loginService.getToken()
-        })
-      };
-      return this.http.patch<User>(`${TISS_API}/user/update`, opt);
+      return this.doPatch('/user/update', user);
     }
 
 }

@@ -1,8 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { TISS_API, authConfig } from './app.api';
-import { tap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { authConfig } from './app.api';
 import { map } from 'rxjs/operators';
 import { OAuthService, JwksValidationHandler } from 'angular-oauth2-oidc';
 import { Observable } from 'rxjs';

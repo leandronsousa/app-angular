@@ -13,6 +13,10 @@ const routes: Routes = [
     path: 'users',
     loadChildren: () => import('./user/user.module').then(mod => mod.UserModule)
   },
+  {
+    path: 'spsadt',
+    loadChildren: () => import('./tiss/spsadt/spsadt.module').then(mod => mod.SpsadtModule)
+  }
 ];
 
 @NgModule({

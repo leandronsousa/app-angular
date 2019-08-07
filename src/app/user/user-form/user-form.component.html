@@ -8,7 +8,7 @@
       <mat-card-content>
         <div class="row">
           <div class="col">
-            <mat-form-field appearance="outline" class="third-width" color="primary">
+            <mat-form-field appearance="outline" color="primary">
               <mat-label>Name</mat-label>
               <input type="text" #name matInput placeholder="Name" [(ngModel)]="user.name" name="name" minlength="5" maxlength="100" required="true">
                   <mat-error *ngIf="!name.valid">
@@ -20,7 +20,7 @@
 
         <div class="row">
           <div class="col">
-            <mat-form-field appearance="outline" class="third-width" color="primary">
+            <mat-form-field appearance="outline" color="primary">
               <mat-label>E-mail</mat-label>
               <input type="text" #email matInput placeholder="E-mail" [(ngModel)]="user.email" name="email" [email]="true" maxlength="100">
               <mat-error *ngIf="!email.valid">
