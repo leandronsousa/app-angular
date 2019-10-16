@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpsadtService } from '../spsadt.service';
+import { Spsadt } from '../spsadt.model';
 
 @Component({
   selector: 'app-spsadt-new',
@@ -7,6 +8,8 @@ import { SpsadtService } from '../spsadt.service';
   styleUrls: ['./spsadt-new.component.scss']
 })
 export class SpsadtNewComponent implements OnInit {
+
+  spsadt: Spsadt;
 
   constructor(private spsadtService: SpsadtService) { }
 

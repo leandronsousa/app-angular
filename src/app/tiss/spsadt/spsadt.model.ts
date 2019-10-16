@@ -32,14 +32,14 @@ export class Spsadt {
   tipoAtendimento: string;
   indicacaoAcidente: string;
   tipoConsulta: string;
-  motivoEncerramento: string;
-  observacao: string;
-  totalProcedimento: number;
-  totalTaxaAluguel: number;
-  totalMaterial: number;
-  totalMedicamento: number;
-  totalOpme: number;
-  totalGases: number;
-  totalGeral: number;
+  motivoEncerramento?: string;
+  observacao?: string;
+  totalProcedimento?: number;
+  totalTaxaAluguel?: number;
+  totalMaterial?: number;
+  totalMedicamento?: number;
+  totalOpme?: number;
+  totalGases?: number;
+  totalGeral?: number;
 
 }
