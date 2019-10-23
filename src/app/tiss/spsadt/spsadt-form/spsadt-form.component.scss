@@ -7,19 +7,10 @@
   margin: 5px 0;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  max-width: 100%;
-  flex-wrap: wrap;
-}
-
-.col {
-  flex: 1;
-  margin: 0 auto;
-  border: 1px solid #ccc;
-}
-
 .col:last-child {
   margin-right: 0;
+}
+
+.bordered {
+  border: 1px solid #ccc;
 }
