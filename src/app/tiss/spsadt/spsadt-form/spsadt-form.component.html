@@ -1,5 +1,5 @@
 <form [formGroup]="spsadtForm" novalidate>
-  <mat-card class="spsadt-card">
+  <mat-card>
     <mat-card-header>
       <mat-card-title>GUIA DE SERVIÇO PROFISSIONAL/ SERVICO AUXILIAR DE DIAGNÓSTICO E TERAPIA - SP/SADT</mat-card-title>
     </mat-card-header>
@@ -20,77 +20,115 @@
           </td>
         </tr>
       </table>
-      <div class="row">
-        <div class="col">
-          <mat-form-field appearance="outline" color="primary">
-            <mat-label>Registro ANS</mat-label>
-            <input matInput formControlName="registroAns">
-          </mat-form-field>
-        </div>
-        <div class="col">
-          <mat-form-field appearance="outline" color="primary">
-            <mat-label>Número Guia Principal</mat-label>
-            <input matInput formControlName="numGuiaPrincipal">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field appearance="outline" color="primary">
-            <input matInput placeholder="Data da Autorização" formControlName="dataAutorizacao">
-          </mat-form-field>
-        </div>
-        <div class="col">
-          <mat-form-field appearance="outline" color="primary">
-            <input matInput placeholder="Senha" formControlName="senha">
-          </mat-form-field>
-        </div>
-        <div class="col">
-          <mat-form-field appearance="outline" color="primary">
-            <input matInput placeholder="Data de validade da senha" formControlName="dataValidadeSenha">
-          </mat-form-field>
-        </div>
-        <div class="col">
-          <mat-form-field appearance="outline" color="primary">
-            <input matInput placeholder="Número da guia na operadora" formControlName="numGuiaOperadora">
-          </mat-form-field>
-        </div>
-      </div>
+      <table cellspacing="10">
+        <tr>
+          <td colspan="2">
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Data da Autorização</mat-label>
+              <input matInput formControlName="dataAutorizacao">
+            </mat-form-field>
+          </td>
+          <td colspan="2">
+            <mat-form-field appearance="outline" color="primary" >
+              <mat-label>Senha</mat-label>
+              <input matInput formControlName="senha">
+            </mat-form-field>
+          </td>
+          <td colspan="2">
+            <mat-form-field appearance="outline" color="primary" >
+              <mat-label>Validade da senha</mat-label>
+              <input matInput formControlName="dataValidadeSenha">
+            </mat-form-field>
+          </td>
+          <td colspan="2">
+              <mat-form-field appearance="outline" color="primary" >
+                <mat-label>Número na operadora</mat-label>
+                <input matInput formControlName="numGuiaOperadora">
+              </mat-form-field>
+            </td>
+        </tr>
+      </table>
 
       <h5>Dados do Beneficiário</h5>
 
+      <table cellspacing="10">
+        <tr>
+          <td colspan="2">
+            <mat-form-field appearance="outline" color="primary">
+              <mat-label>Número da carteira</mat-label>
+              <input matInput formControlName="numCarteira">
+              <mat-error *ngIf="spsadtForm.controls['numCarteira'].hasError('required')">
+                Número da carteira <strong>Obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+          </td>
+          <td colspan="2">
+            <mat-form-field appearance="outline" color="primary" >
+              <mat-label>Validade da carteira</mat-label>
+              <input matInput formControlName="dataValidadeCarteira">
+            </mat-form-field>
+          </td>
+          <td colspan="2">
+            <mat-form-field appearance="outline" color="primary" >
+              <mat-label>Nome do beneficiário</mat-label>
+              <input matInput formControlName="nomeBeneficiario">
+              <mat-error *ngIf="spsadtForm.controls['nomeBeneficiario'].hasError('required')">
+                Nome do beneficiário <strong>Obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+          </td>
+          <td colspan="2">
+            <mat-form-field appearance="outline" color="primary" >
+              <mat-label>Cartão nacional de saúde</mat-label>
+              <input matInput formControlName="numCartaoSaude">
+            </mat-form-field>
+          </td>
+          <td colspan="2">
+              <mat-form-field appearance="outline" color="primary" >
+                <mat-label>Atendimento RN</mat-label>
+                <input matInput formControlName="atendimentoRn">
+              </mat-form-field>
+            </td>
+        </tr>
+      </table>
+
       <div class="row">
         <div class="col">
-          <mat-form-field class="full-width">
-            <textarea matInput placeholder="Número da carteira" formControlName="numCarteira"></textarea>
-            <mat-error *ngIf="spsadtForm.controls['numCarteira'].hasError('required')">
-              Número da carteira <strong>Obrigatório</strong>
-            </mat-error>
-          </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+                <mat-label>Número da carteira</mat-label>
+                <input matInput formControlName="numCarteira">
+                <mat-error *ngIf="spsadtForm.controls['numCarteira'].hasError('required')">
+                  Número da carteira <strong>Obrigatório</strong>
+                </mat-error>
+              </mat-form-field>
         </div>
         <div class="col">
-          <mat-form-field class="full-width">
-            <textarea matInput placeholder="Validade da carteira" formControlName="dataValidadeCarteira"></textarea>
-          </mat-form-field>
+            <mat-form-field appearance="outline" color="primary" >
+                <mat-label>Validade da carteira</mat-label>
+                <input matInput formControlName="dataValidadeCarteira">
+              </mat-form-field>
         </div>
         <div class="col">
-          <mat-form-field class="full-width">
-            <textarea matInput placeholder="Nome do beneficiário" formControlName="nomeBeneficiario"></textarea>
-            <mat-error *ngIf="spsadtForm.controls['nomeBeneficiario'].hasError('required')">
-              Nome do beneficiário <strong>Obrigatório</strong>
-            </mat-error>
-          </mat-form-field>
+            <mat-form-field appearance="outline" color="primary" >
+                <mat-label>Nome do beneficiário</mat-label>
+                <input matInput formControlName="nomeBeneficiario">
+                <mat-error *ngIf="spsadtForm.controls['nomeBeneficiario'].hasError('required')">
+                  Nome do beneficiário <strong>Obrigatório</strong>
+                </mat-error>
+              </mat-form-field>
         </div>
         <div class="col">
-          <mat-form-field class="full-width">
-            <textarea matInput placeholder="Cartão nacional de saúde" formControlName="numCartaoSaude"></textarea>
-          </mat-form-field>
-        </div>
-        <div class="col">
-          <mat-form-field class="full-width">
-            <textarea matInput placeholder="Atendimento RN" formControlName="atendimentoRn"></textarea>
-          </mat-form-field>
-        </div>
+            <mat-form-field appearance="outline" color="primary" >
+                <mat-label>Cartão nacional de saúde</mat-label>
+                <input matInput formControlName="numCartaoSaude">
+              </mat-form-field>
+         </div>
+         <div class="col">
+            <mat-form-field appearance="outline" color="primary" >
+                <mat-label>Atendimento RN</mat-label>
+                <input matInput formControlName="atendimentoRn">
+              </mat-form-field>
+         </div>
       </div>
 
 
