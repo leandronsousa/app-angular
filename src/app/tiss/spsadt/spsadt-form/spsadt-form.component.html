@@ -89,6 +89,194 @@
          </div>
       </div>
 
+      <h5>Dados do Solicitante</h5>
+
+      <div class="row">
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Código na operadora</mat-label>
+            <input matInput formControlName="codigoContratadoSolicitante">
+            <mat-error *ngIf="spsadtForm.controls['codigoContratadoSolicitante'].hasError('required')">
+              Código na operadora <strong>Obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Nome do contratado</mat-label>
+            <input matInput formControlName="nomeContratadoSolicitante">
+            <mat-error *ngIf="spsadtForm.controls['nomeContratadoSolicitante'].hasError('required')">
+              Nome do contratado <strong>Obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Nome do contratado</mat-label>
+            <input matInput formControlName="nomeContratadoSolicitante">
+            <mat-error *ngIf="spsadtForm.controls['nomeContratadoSolicitante'].hasError('required')">
+              Nome do contratado <strong>Obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Nome do profissional solicitante</mat-label>
+            <input matInput formControlName="nomeProfissionalSolicitante">
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Conselho profissional</mat-label>
+            <input matInput formControlName="conselhoProfissionalSolicitante">
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Número no conselho</mat-label>
+            <input matInput formControlName="numConselhoProfissionalSolicitante">
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>UF</mat-label>
+            <input matInput formControlName="ufConselhoProfissionalSolicitante">
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Código CBO</mat-label>
+            <input matInput formControlName="cboProfissionalSolicitante">
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Assinatura do profissional solicitante</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <h5>Dados da solicitação / Procedimentos ou Itens Assistenciais Solicitados</h5>
+
+      <div class="row">
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Caráter do Atendimento</mat-label>
+            <input matInput formControlName="caraterAtendimento">
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Data da solicitação</mat-label>
+            <input matInput formControlName="dataSolicitacao">
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Indicação clínica</mat-label>
+            <input matInput formControlName="indicacaoClinica">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Tabela</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Código do procedimento</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Descrição</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Qtde. solic.</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Qtde. aut.</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <h5>Dados do Contratado Executante</h5>
+
+      <div class="row">
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Código na operadora</mat-label>
+            <input matInput formControlName="codigoContratadoExecutante">
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Nome do contratado</mat-label>
+            <input matInput formControlName="nomeContratadoExecutante">
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Código CNES</mat-label>
+            <input matInput formControlName="cnesContratadoExecutante">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <h5>Dados do Atendimento</h5>
+
+      <div class="row">
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Tipo de Atendimento</mat-label>
+            <input matInput formControlName="tipoAtendimento">
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Indicação de acidente</mat-label>
+            <input matInput formControlName="indicacaoAcidente">
+          </mat-form-field>
+        </div>
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Tipo de consulta</mat-label>
+            <input matInput formControlName="tipoConsulta">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary" class="full-width">
+            <mat-label>Motivo de encerramento</mat-label>
+            <textarea matInput formControlName="motivoEncerramento"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col bordered">
+          <mat-form-field appearance="outline" color="primary" class="full-width">
+            <mat-label>Observação / justificativa</mat-label>
+            <textarea matInput formControlName="observacao"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
 
     </mat-card-content>
     <mat-card-actions>
