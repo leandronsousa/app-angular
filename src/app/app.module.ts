@@ -9,10 +9,19 @@ import { OAuthModule } from 'angular-oauth2-oidc';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavTesteComponent } from './nav-teste/nav-teste.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { OperadoraComponent } from './operadora/operadora.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavTesteComponent,
+    OperadoraComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +32,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     OAuthModule.forRoot(),
     HttpClientModule,
     SharedModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
