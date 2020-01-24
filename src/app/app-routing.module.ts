@@ -13,11 +13,24 @@ const routes: Routes = [
   {path: 'teste', component: NavTesteComponent},
   {
     path: 'users',
-    loadChildren: () => import('./user/user.module').then(mod => mod.UserModule)
+    loadChildren: () => import('./user/user.module').then(mod => mod.UserModule),
+    data: {
+      breadcrumb: 'Cadastro de Usuários'
+    }
   },
   {
     path: 'spsadt',
-    loadChildren: () => import('./tiss/spsadt/spsadt.module').then(mod => mod.SpsadtModule)
+    loadChildren: () => import('./tiss/spsadt/spsadt.module').then(mod => mod.SpsadtModule),
+    data: {
+      breadcrumb: 'Cadastro de Guias de SP/SADT'
+    }
+  },
+  {
+    path: 'operadora',
+    loadChildren: () => import('./operadora/operadora.module').then(mod => mod.OperadoraModule),
+    data: {
+      breadcrumb: 'Cadastro de Operadoras'
+    }
   }
 ];
 

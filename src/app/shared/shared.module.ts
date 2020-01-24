@@ -20,6 +20,6 @@ export class SharedModule {
         return {
             ngModule: SharedModule,
             providers: [LoginService, UserService, SpsadtService, AppService]
-        }
+        };
     }
 }

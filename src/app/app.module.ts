@@ -15,13 +15,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { OperadoraComponent } from './operadora/operadora.component';
-
+import { HeaderComponent } from './header/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavTesteComponent,
-    OperadoraComponent
+    HeaderComponent,
+    NavTesteComponent
   ],
   imports: [
     BrowserModule,
