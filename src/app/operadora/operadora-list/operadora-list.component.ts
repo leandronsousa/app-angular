@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { OperadoraService } from '../operadora.service';
+import { Observable } from 'rxjs';
+import { Operadora } from '../operadora.model';
 
 @Component({
   selector: 'app-operadora-list',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OperadoraListComponent implements OnInit {
 
-  constructor() { }
+  operadoras$: Observable<Operadora[]>;
+
+  constructor(private service: OperadoraService) { }
 
   ngOnInit() {
+    this.operadoras$ = this.service.list();
   }
 
 }

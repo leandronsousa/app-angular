@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Operadora } from '../operadora.model';
 
 @Component({
   selector: 'app-operadora-table',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./operadora-table.component.scss']
 })
 export class OperadoraTableComponent implements OnInit {
+
+  @Input() operadoras: Operadora[];
 
   constructor() { }
 
