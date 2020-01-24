@@ -26,7 +26,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'operadora',
+    path: 'operadoras',
     loadChildren: () => import('./operadora/operadora.module').then(mod => mod.OperadoraModule),
     data: {
       breadcrumb: 'Cadastro de Operadoras'

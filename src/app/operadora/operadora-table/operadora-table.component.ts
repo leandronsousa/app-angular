@@ -10,9 +10,15 @@ export class OperadoraTableComponent implements OnInit {
 
   @Input() operadoras: Operadora[];
 
+  columns: string[] = ['name', 'acoes'];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  btt(s: string): string {
+    return btoa(s);
   }
 
 }

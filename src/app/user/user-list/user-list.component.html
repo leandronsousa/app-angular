@@ -3,14 +3,8 @@
     <mat-card-title>Listagem de Usuários</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <div class="row">
-      <div class="col">
-
-        <app-user-table
-          [users]="users$ | async">
-        </app-user-table>
-
-      </div>
-    </div>
+    <app-user-table
+      [users]="users$ | async">
+    </app-user-table>
   </mat-card-content>
 </mat-card>
