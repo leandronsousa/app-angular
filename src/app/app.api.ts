@@ -9,7 +9,9 @@ export const authConfig: AuthConfig = {
   tokenEndpoint: `${TISS_API}/oauth/token`,
 
     // Url of the Identity Provider
-  issuer: `${TISS_API}/index.html`,
+  issuer: `${TISS_API}`,
+
+  //userinfoEndpoint: '`${TISS_API}/user/',
 
   // URL of the SPA to redirect the user to after login
   redirectUri: `${TISS_API}`,
@@ -17,16 +19,16 @@ export const authConfig: AuthConfig = {
   // The SPA's id. The SPA is registerd with this id at the auth-server
   clientId: 'app-tiss-pass',
 
-  dummyClientSecret: 'apptiss123456',
+  dummyClientSecret: 'aNWTdoGwBD1evkBIxNl6WdDvFtc0LBV1dxQ-dA_qLhTrJCWzkkerUFy_GwylPCotoqhtBP4AJ1GadQGl',
 
   // set the scope for the permissions the client should request
   // The first three are defined by OIDC. The 4th is a usecase-specific one
-  scope: 'read',
-  
+  scope: 'read write',
+
   strictDiscoveryDocumentValidation: false,
-  
+
   responseType: 'token',
-  
+
   oidc: false
 
-}
+};

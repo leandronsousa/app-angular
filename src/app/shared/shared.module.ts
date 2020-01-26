@@ -1,7 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { LoginService } from '../security/login/login.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from '../security/login/login.component';
 import { MaterialModule } from '../material/material.module';
 import { RegisterComponent } from '../register/register.component';
 import { CommonModule } from '@angular/common';
@@ -12,7 +11,7 @@ import { SpsadtService } from '../tiss/spsadt/spsadt.service';
 import { OperadoraService } from '../operadora/operadora.service';
 
 @NgModule({
-    declarations: [LoginComponent, RegisterComponent, ExampleComponent],
+    declarations: [RegisterComponent, ExampleComponent],
     imports: [FormsModule, ReactiveFormsModule, MaterialModule, CommonModule],
     exports: [FormsModule, ReactiveFormsModule, MaterialModule, CommonModule]
 })

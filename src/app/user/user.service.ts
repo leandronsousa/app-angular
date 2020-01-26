@@ -7,11 +7,11 @@ import { GenericService } from '../core/generic.service';
 export class UserService extends GenericService<User> {
 
     list(): Observable<User[]> {
-        return super.doGet('/user/list');
+        return super.doGet('/user');
     }
 
     save(user: User): Observable<User> {
-        super.doPost('/user/save', user);
+        super.doPost('/user', user);
         return null;
     }
 
@@ -20,7 +20,7 @@ export class UserService extends GenericService<User> {
     }
 
     update(user: User): Observable<User> {
-      return this.doPatch('/user/update', user);
+      return this.doPatch('/user', user);
     }
 
 }

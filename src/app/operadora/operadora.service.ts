@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 export class OperadoraService extends GenericService<Operadora> {
 
   list(): Observable<Operadora[]> {
-    return super.doGet('/operadora/list');
+    return super.doGet('/operadora');
   }
 
   save(operadora: Operadora): Observable<Operadora> {
-    super.doPost('/operadora/save', operadora);
+    super.doPost('/operadora', operadora);
     return null;
   }
 
@@ -20,7 +20,7 @@ export class OperadoraService extends GenericService<Operadora> {
   }
 
   update(operadora: Operadora): Observable<Operadora> {
-   return this.doPatch('/operadora/update', operadora);
+   return this.doPatch('/operadora', operadora);
   }
 
 }

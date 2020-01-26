@@ -4,6 +4,9 @@ import { LoginComponent } from './security/login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ExampleComponent } from './example/example.component';
 import { NavTesteComponent } from './nav-teste/nav-teste.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './security/auth/auth.guard';
 
 const routes: Routes = [
   // {path: '', component: NavigationComponent},
@@ -12,25 +15,42 @@ const routes: Routes = [
   {path: 'example', component: ExampleComponent},
   {path: 'teste', component: NavTesteComponent},
   {
-    path: 'users',
-    loadChildren: () => import('./user/user.module').then(mod => mod.UserModule),
-    data: {
-      breadcrumb: 'Cadastro de Usuários'
-    }
+    path: '',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        canActivateChild: [AuthGuard],
+        children: [
+          {
+            path: 'users',
+            loadChildren: () => import('./user/user.module').then(mod => mod.UserModule),
+            data: {
+              breadcrumb: 'Cadastro de Usuários'
+            }
+          },
+          {
+            path: 'spsadt',
+            loadChildren: () => import('./tiss/spsadt/spsadt.module').then(mod => mod.SpsadtModule),
+            data: {
+              breadcrumb: 'Cadastro de Guias de SP/SADT'
+            }
+          },
+          {
+            path: 'operadoras',
+            loadChildren: () => import('./operadora/operadora.module').then(mod => mod.OperadoraModule),
+            data: {
+              breadcrumb: 'Cadastro de Operadoras'
+            }
+          }
+        ]
+      }
+    ]
   },
   {
-    path: 'spsadt',
-    loadChildren: () => import('./tiss/spsadt/spsadt.module').then(mod => mod.SpsadtModule),
-    data: {
-      breadcrumb: 'Cadastro de Guias de SP/SADT'
-    }
-  },
-  {
-    path: 'operadoras',
-    loadChildren: () => import('./operadora/operadora.module').then(mod => mod.OperadoraModule),
-    data: {
-      breadcrumb: 'Cadastro de Operadoras'
-    }
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 

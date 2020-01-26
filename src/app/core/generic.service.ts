@@ -3,11 +3,12 @@ import { LoginService } from '../security/login/login.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TISS_API } from '../app.api';
 import { Observable } from 'rxjs';
+import { AuthService } from '../security/auth/auth.service';
 
 @Injectable()
 export class GenericService<T> {
 
-  constructor(private http: HttpClient, private loginService: LoginService) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   protected doPost(url: string, model: T) {
     this.http.post<T>(`${TISS_API}${url}`, model, this.getOpt()).subscribe(response => console.log(response), err => console.log(err));
@@ -25,7 +26,7 @@ export class GenericService<T> {
     const opt =  {
       headers: new HttpHeaders ({
           'Content-type': 'application/json',
-          'Authorization': 'Bearer ' + this.loginService.getToken()
+          'Authorization': 'Bearer ' + this.authService.getToken()
       })
     };
     return opt;

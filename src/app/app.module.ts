@@ -16,11 +16,17 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { HeaderComponent } from './header/header/header.component';
+import { LoginModule } from './security/login/login.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavTesteComponent
+    NavTesteComponent,
+    PageNotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,8 @@ import { HeaderComponent } from './header/header/header.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
