@@ -1,5 +1,5 @@
-import { Cbo } from 'src/app/cbo/cbo.model';
-import { Uf } from 'src/app/uf/uf.model';
+import { Cbo } from 'src/app/funcionalidades/cbo/cbo.model';
+import { Uf } from 'src/app/funcionalidades/uf/uf.model';
 
 export class Spsadt {
 

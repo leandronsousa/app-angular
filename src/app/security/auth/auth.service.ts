@@ -14,8 +14,6 @@ export class AuthService {
 
   private static CLIENT_SECRET = 'aNWTdoGwBD1evkBIxNl6WdDvFtc0LBV1dxQ-dA_qLhTrJCWzkkerUFy_GwylPCotoqhtBP4AJ1GadQGl';
 
-  isLoggedIn = false;
-
   redirectUrl: string;
 
   constructor(
@@ -30,19 +28,15 @@ export class AuthService {
       // Loading data about the user
         // this.oauthService.loadUserProfile();
 
-      this.isLoggedIn = true;
       this.router.navigate(['/users']);
     }).then(() => {
-      console.log(this.oauthService.getAccessToken());
       // Using the loaded user data
       const claims = this.oauthService.getIdentityClaims();
       if (claims) {
         console.log('given_name', claims);
       }
-      this.isLoggedIn = true;
     }).catch((error) => {
       console.log(error);
-      this.isLoggedIn = false;
     });
   }
 
@@ -59,7 +53,7 @@ export class AuthService {
 
   logout() {
     this.oauthService.logOut();
-    this.isLoggedIn = false;
+    this.router.navigate(['/login']);
   }
 
   get name() {
@@ -70,6 +64,10 @@ export class AuthService {
 
   getToken(): string {
     return this.oauthService.getAccessToken();
+  }
+
+  isLoggedIn(): boolean {
+    return this.oauthService.hasValidAccessToken();
   }
 
   configure() {

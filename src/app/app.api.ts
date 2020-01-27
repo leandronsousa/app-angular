@@ -29,6 +29,8 @@ export const authConfig: AuthConfig = {
 
   responseType: 'token',
 
-  oidc: false
+  oidc: false,
+
+  requireHttps: false
 
 };

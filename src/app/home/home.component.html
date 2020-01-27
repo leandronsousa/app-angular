@@ -4,9 +4,6 @@
       <mat-icon>menu</mat-icon>
     </button>
     <h1 class="app-name">Responsive App</h1>
-
-    <a routerLink="/login" href="#" routerLinkActive="active" class="login">Login</a>
-
   </mat-toolbar>
   <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="(isHandset$ | async) ? 56 : 0">
     <mat-sidenav #drawer [fixedInViewport]="(isHandset$ | async)"
