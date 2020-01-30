@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from './user.model';
 import { Observable } from 'rxjs';
-import { GenericService } from '../core/generic.service';
+import { GenericService } from '../core/services/generic.service';
 
 @Injectable()
 export class UserService extends GenericService<User> {

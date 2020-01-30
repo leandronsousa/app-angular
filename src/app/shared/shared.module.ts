@@ -9,10 +9,11 @@ import { AppService } from '../app.service';
 import { ExampleComponent } from '../example/example.component';
 import { SpsadtService } from '../tiss/spsadt/spsadt.service';
 import { OperadoraService } from '../operadora/operadora.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [RegisterComponent, ExampleComponent],
-    imports: [FormsModule, ReactiveFormsModule, MaterialModule, CommonModule],
+    imports: [FormsModule, ReactiveFormsModule, MaterialModule, CommonModule, RouterModule],
     exports: [FormsModule, ReactiveFormsModule, MaterialModule, CommonModule]
 })
 export class SharedModule {

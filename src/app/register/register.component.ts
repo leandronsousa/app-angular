@@ -2,6 +2,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { UserService } from '../user/user.service';
 import { User } from '../user/user.model';
+import { Observable } from 'rxjs';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-register',
@@ -10,6 +12,8 @@ import { User } from '../user/user.model';
   encapsulation: ViewEncapsulation.None
 })
 export class RegisterComponent implements OnInit {
+
+  isHandset$: Observable<boolean>;
 
   emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
@@ -33,9 +37,11 @@ export class RegisterComponent implements OnInit {
   }
 
   constructor(private formBuilder: FormBuilder,
-              private userService: UserService) { }
+              private userService: UserService,
+              private appService: AppService) { }
 
   ngOnInit() {
+    this.isHandset$ = this.appService.isHandset();
   }
 
   onSubmit(user: User) {

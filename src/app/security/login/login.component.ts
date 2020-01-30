@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { LoginService } from './login.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +12,17 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+  isHandset$: Observable<boolean>;
+
   emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
   formLogin: FormGroup;
 
   constructor(private loginService: LoginService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private appService: AppService) {
+    this.isHandset$ = this.appService.isHandset();
+  }
 
   ngOnInit() {
     this.formLogin = new FormGroup({

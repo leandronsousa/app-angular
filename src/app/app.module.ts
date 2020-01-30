@@ -20,6 +20,7 @@ import { LoginModule } from './security/login/login.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 import { HttpErrorInterceptor } from './core/interceptors/http-error.interceptor';
+import { MessageComponent } from './core/components/message/message.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HttpErrorInterceptor } from './core/interceptors/http-error.interceptor
     HeaderComponent,
     NavTesteComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

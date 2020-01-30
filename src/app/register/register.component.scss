@@ -1,16 +1,21 @@
-html, body { 
-    height: 100%; 
+html, body {
+    height: 100%;
+    width: 100%;
 }
-body { 
-    margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     background: #eee;
 }
 
 .div-register {
     display: flex;
     justify-content: center;
-    margin: 100px auto;
+    margin: 10% auto;
+}
+
+.form {
+  width: 100%;
 }
 
 .error {
@@ -21,8 +26,8 @@ body {
 }
 
 .card {
-    width: 600px;
-    max-width: 600px;
+  min-width: 30%;
+  max-width: 100%;
 }
 
 mat-form-field {
@@ -47,4 +52,9 @@ mat-form-field {
 .full-width {
     width: 100%;
 }
-  
+
+.is-mobile .toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}

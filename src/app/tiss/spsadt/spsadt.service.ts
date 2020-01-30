@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GenericService } from 'src/app/core/generic.service';
+import { GenericService } from 'src/app/core/services/generic.service';
 import { Spsadt } from './spsadt.model';
 import { Observable } from 'rxjs';
 

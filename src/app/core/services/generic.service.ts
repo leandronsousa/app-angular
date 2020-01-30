@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { LoginService } from '../security/login/login.service';
+import { LoginService } from '../../security/login/login.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { TISS_API } from '../app.api';
+import { TISS_API } from '../../app.api';
 import { Observable } from 'rxjs';
-import { AuthService } from '../security/auth/auth.service';
+import { AuthService } from '../../security/auth/auth.service';
 
 @Injectable()
 export class GenericService<T> {

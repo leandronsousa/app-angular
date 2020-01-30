@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GenericService } from '../core/generic.service';
+import { GenericService } from '../core/services/generic.service';
 import { Operadora } from './operadora.model';
 import { Observable } from 'rxjs';
 
