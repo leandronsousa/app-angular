@@ -53,6 +53,7 @@ import { MessageComponent } from './core/components/message/message.component';
       provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true
     }
   ],
+  entryComponents: [HeaderComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

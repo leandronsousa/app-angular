@@ -1,3 +1,28 @@
+<section class="container row-wrap">
+	<div class="item">
+    <ng-template [cdkPortalOutlet]="componentHeader"></ng-template>
+  </div>
+	<div class="item">
+    <ng-template [cdkPortalOutlet]="templateHeader"></ng-template>
+  </div>
+</section>
+
+<ng-template #templateHeaderContent>
+  <mat-toolbar color="default">
+    <mat-toolbar-row>
+      <span class="example-spacer"></span>
+      <button class="example-icon" mat-button color="primary" type="button">
+        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">add</mat-icon>
+        Cadastrar
+      </button>
+      <button class="example-icon" mat-button color="primary" type="button">
+        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">search</mat-icon>
+        Pesquisar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</ng-template>
+
 <mat-card>
   <mat-card-header>
     <mat-card-title>Listagem de Usuários</mat-card-title>
@@ -8,3 +33,6 @@
     </app-user-table>
   </mat-card-content>
 </mat-card>
+
+
+

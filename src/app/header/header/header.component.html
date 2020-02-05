@@ -1,9 +1,7 @@
 
-<mat-toolbar *ngIf="headers" color="default">
+<mat-toolbar color="default" >
   <mat-toolbar-row>
-    <!-- <span>{{ headers[headers.length-1].breadcrumb }}</span> -->
-    <span class="example-spacer"></span>
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">add</mat-icon>
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">search</mat-icon>
+    <span>{{ breadcrumb | async}}</span>
   </mat-toolbar-row>
 </mat-toolbar>
+

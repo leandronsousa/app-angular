@@ -10,11 +10,12 @@ import { ExampleComponent } from '../example/example.component';
 import { SpsadtService } from '../tiss/spsadt/spsadt.service';
 import { OperadoraService } from '../operadora/operadora.service';
 import { RouterModule } from '@angular/router';
+import { PortalModule } from '@angular/cdk/portal';
 
 @NgModule({
     declarations: [RegisterComponent, ExampleComponent],
-    imports: [FormsModule, ReactiveFormsModule, MaterialModule, CommonModule, RouterModule],
-    exports: [FormsModule, ReactiveFormsModule, MaterialModule, CommonModule]
+    imports: [FormsModule, ReactiveFormsModule, MaterialModule, CommonModule, RouterModule, PortalModule],
+    exports: [FormsModule, ReactiveFormsModule, MaterialModule, CommonModule, PortalModule]
 })
 export class SharedModule {
     static forRoot(): ModuleWithProviders {

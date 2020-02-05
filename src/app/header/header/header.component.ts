@@ -1,33 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { Header } from '../header.model';
 import { isNullOrUndefined } from 'util';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
 
   private static BREADCRUMB = 'breadcrumb';
 
-  headers: Header[];
+  breadcrumb: Observable<string>;
 
-  constructor(private router: Router, private activatedRoutes: ActivatedRoute) { }
+  constructor(private router: Router,
+              private activatedRoutes: ActivatedRoute,
+              private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => this.headers = this.criarHeader(this.activatedRoutes.root));
+    ).subscribe(() => this.criarHeader(this.activatedRoutes.root));
+
   }
 
-  criarHeader(route: ActivatedRoute, path: string = '#', headers: Header[] = []): Header[] {
+  ngAfterViewInit() {
+    this.cdr.detectChanges();
+  }
+
+  criarHeader(route: ActivatedRoute, path: string = '#', headers: Header[] = []): void {
     const children: ActivatedRoute[] = route.children;
 
     if (children.length === 0) {
-      return headers;
+      if (!isNullOrUndefined(headers) && headers.length > 0) {
+        this.breadcrumb = of(headers[headers.length - 1].breadcrumb);
+      }
+      return;
     }
 
     for (const child of children) {
@@ -39,7 +50,7 @@ export class HeaderComponent implements OnInit {
       if (!isNullOrUndefined(breadcrumb)) {
         headers.push({ breadcrumb, path });
       }
-      return this.criarHeader(child, path, headers);
+      this.criarHeader(child, path, headers);
     }
   }
 

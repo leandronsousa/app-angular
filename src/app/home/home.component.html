@@ -5,6 +5,13 @@
         <mat-icon>menu</mat-icon>
       </button>
       <h1 class="app-name">Responsive App</h1>
+      <span class="example-spacer"></span>
+      <span  *ngIf="isLoggedIn()">
+        <button class="example-icon" mat-button color="warn" type="button" (click)="logout()">
+        <mat-icon >exit_to_app</mat-icon>
+          Logout
+        </button>
+      </span>
     </mat-toolbar>
     <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="(isHandset$ | async) ? 56 : 0">
       <mat-sidenav #drawer [fixedInViewport]="(isHandset$ | async)"
@@ -24,7 +31,7 @@
         </mat-menu>
       </mat-sidenav>
       <mat-sidenav-content>
-        <app-header></app-header>
+        <header></header>
         <main>
           <router-outlet></router-outlet>
         </main>
