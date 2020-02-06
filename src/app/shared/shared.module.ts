@@ -7,8 +7,6 @@ import { CommonModule } from '@angular/common';
 import { UserService } from '../user/user.service';
 import { AppService } from '../app.service';
 import { ExampleComponent } from '../example/example.component';
-import { SpsadtService } from '../tiss/spsadt/spsadt.service';
-import { OperadoraService } from '../operadora/operadora.service';
 import { RouterModule } from '@angular/router';
 import { PortalModule } from '@angular/cdk/portal';
 
@@ -21,7 +19,7 @@ export class SharedModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: SharedModule,
-            providers: [LoginService, UserService, SpsadtService, AppService, OperadoraService]
+            providers: [LoginService, UserService, AppService]
         };
     }
 }

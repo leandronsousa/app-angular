@@ -29,20 +29,6 @@ const routes: Routes = [
             data: {
               breadcrumb: 'Cadastro de Usuários'
             }
-          },
-          {
-            path: 'spsadt',
-            loadChildren: () => import('./tiss/spsadt/spsadt.module').then(mod => mod.SpsadtModule),
-            data: {
-              breadcrumb: 'Cadastro de Guias de SP/SADT'
-            }
-          },
-          {
-            path: 'operadoras',
-            loadChildren: () => import('./operadora/operadora.module').then(mod => mod.OperadoraModule),
-            data: {
-              breadcrumb: 'Cadastro de Operadoras'
-            }
           }
         ]
       }
