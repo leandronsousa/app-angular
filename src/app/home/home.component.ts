@@ -10,7 +10,7 @@ import { AuthService } from '../security/auth/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  title = 'tiss-angular';
+  title = 'app-angular';
 
   isHandset$: Observable<boolean>;
 
